@@ -28,6 +28,15 @@ const Hero = () => {
       stagger: 0.08,
       delay: 1,
     });
+    const textDown= gsap.timeline({
+      scrollTrigger:{
+        trigger:".subtitle",
+        start:"top 50%",
+        end:"bottom top",
+        scrub:true,
+
+      }
+    })
     const leafAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#hero",
@@ -38,6 +47,13 @@ const Hero = () => {
     });
     leafAnimation.to(".left-leaf", { y: -300 }, 0);
     leafAnimation.to(".right-leaf", { y: 300 }, 0);
+    textDown.to(splitLines.lines,{
+        opacity: 0,
+      yPercent:300,
+      ease: "expo.in",
+      stagger: 0.06,
+
+    })
   }, []);
   return (
     <>

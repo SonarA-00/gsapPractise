@@ -12,7 +12,7 @@ const About = () => {
         trigger: "#about",
         start: "top 50%",
       },
-    });
+    }); 
 
     tl.from(spiltH2.chars, {
       yPercent: 100,
